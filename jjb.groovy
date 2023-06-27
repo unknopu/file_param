@@ -9,6 +9,8 @@ pipeline {
                 script {
                     cleanWs()
 
+                    echo "${pipelineConfig.pipeline_parameter_file_path}"
+
                     pipelineConfig = readYaml file: "${WORKSPACE}/params/${params.pipeline_parameter_file_path}"
                     // jenkinsJobTemplate = "${pipelineConfig.parameters.general.jenkinsJobTemplate}"
 
